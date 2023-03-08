@@ -1,2 +1,4 @@
-0 strinG HOLBERTON Holberton data
-!:mime Holberton
+0 string GRACE  Grace data file
+file -m school.mgc Grace_data.txt
+
+
