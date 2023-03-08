@@ -1,4 +1,4 @@
-0 string GRACE  Grace data file
-file -m school.mgc Grace_data.txt
+0 string GRACE Grace data
+!:mime Grace
 
 
