@@ -13,7 +13,6 @@
 #       if the file is a regular file: school is a regular file
 #       if the file is not a regular file: (nothing)
 file="school"
-
 if [ -e "$file" ]; then
     echo "school file exists"
     if [ ! -s "$file" ]; then 
@@ -24,7 +23,7 @@ if [ -e "$file" ]; then
     if [ -f "$file" ]; then
         echo "school is a regular file"
     else
-        echo ""
+        echo -n ""
     fi
 else 
     echo "school file does not exist"
