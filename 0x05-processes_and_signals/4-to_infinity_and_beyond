@@ -7,7 +7,7 @@
 
 infinity=0
 
-while (( iinfinity -eq 0 ))
+while [[ infinity -eq 0 ]]
 do
 	echo "To infinity and beyond"
 	(( infinity++ ))
