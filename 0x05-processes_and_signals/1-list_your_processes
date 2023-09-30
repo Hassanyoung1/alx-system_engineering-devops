@@ -8,5 +8,5 @@
 #		Display in a user-oriented format
 #		Show process hierarchy
 
-ps aux -f
+ps aux 
 
