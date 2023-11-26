@@ -3,8 +3,8 @@
 file { '/tmp/school':
   ensure  => 'file',
   mode    => '0744',
-  owner   => '_www',
-  group   => '_www',
+  owner   => 'www-data',
+  group   => 'www-data',
   content => 'I love Puppet',
 }
 
