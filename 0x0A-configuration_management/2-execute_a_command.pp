@@ -1,9 +1,9 @@
 # Execute a command
 
 exec { 'killmenow':
-    command     => 'pkill killmenow',
+    command     => 'pkill -f killmenow',
     path        => ['/bin', '/usr/bin'],
-    onlyif      => 'pgrep killnow',
+    onlyif      => 'pgrep -f killnow',
     refreshonly => true,
 }
 
