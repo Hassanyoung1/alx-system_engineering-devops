@@ -3,7 +3,7 @@
 exec { 'killmenow':
     command     => 'pkill -f killmenow',
     path        => ['/bin:/usr/bin'],
-    onlyif      => 'pgrep -f killnow',
+    onlyif      => 'pgrep -f killmenow',
     refreshonly => true,
     logoutput   => true,
 }
