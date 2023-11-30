@@ -10,9 +10,10 @@ if ! nginx -v; then
 	sudo apt install -y nginx
 fi
 
-sudo touch /var/www/html/index.html
-sudo chown -R "$USER":"$USER" /var/www/html/index.html
+sudo touch /var/www/html/index.html /var/www/html/404.html
+sudo chown -R "$USER":"$USER" /var/www/html/index.html /var/www/html/404.html
 echo "Hello World!" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 if  [ ! -e "default_backup" ]; then
 	sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default_backup
@@ -31,6 +32,9 @@ _EOL_
 
 new_string="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
 sudo sed -i "7i $new_string" /etc/nginx/sites-available/default
+
+new_string="\\\terror_page 404 /404.html;"
+sudo sed -i "9i $new_string" /etc/nginx/sites-available/default
 
 if [ ! -e "/etc/nginx/sites-enabled/default" ]; then
         sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
