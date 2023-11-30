@@ -6,8 +6,8 @@
 
 
 if ! nginx -v; then
-	sudo apt -y update
-	sudo apt install -y nginx
+        sudo apt -y update
+        sudo apt install -y nginx
 fi
 
 sudo touch /var/www/html/index.html
@@ -21,9 +21,13 @@ listen 80 default_server;
 listen [::]:80 default_server;
 root /var/www/html;
 index index.html;
+location / {
+        try_files \$uri \$uri/ =404;
+}
 }
 _EOL_
+if [ ! -e "/etc/nginx/sites-enabled/default" ]; then
 
-sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
-
-sudo service nginx restart
+        sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+fi
+sudo service nginx restart                          
