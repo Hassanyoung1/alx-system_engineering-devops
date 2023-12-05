@@ -10,7 +10,7 @@ if ! nginx -v; then
         sudo apt -y update
         sudo apt install -y nginx
 fi
-
+shellcheck disable=SC2154
 sudo touch /var/www/html/index.html /var/www/html/404.html
 sudo chown -R "$USER":"$USER" /var/www/html/index.html /var/www/html/404.html
 echo "Hello World!" > /var/www/html/index.html
