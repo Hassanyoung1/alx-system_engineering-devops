@@ -10,9 +10,9 @@ if ! nginx -v; then
         sudo apt -y update
         sudo apt install -y nginx
 fi
-shellcheck disable=SC2154
-sudo touch /var/www/html/index.html /var/www/html/404.html
-sudo chown -R "$USER":"$USER" /var/www/html/index.html /var/www/html/404.html
+
+sudo mkdir -p /var/www/html
+sudo chmod -R 755 /var/www
 echo "Hello World!" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 
@@ -22,7 +22,8 @@ listen 80 default_server;
 listen [::]:80 default_server;
 root /var/www/html;
 index index.html;
-add_header X-Served-By "$HOSTNAME"
+server_name _;
+add_header X-Served-By \$HOSTNAME;
 location / {
 	rewrite ^/redirect_me https://www.github.com/iAdamo permanent;
 	error_page 404 /404.html;
@@ -30,9 +31,5 @@ location / {
 }
 }
 _EOL_
-
-if [ ! -e "/etc/nginx/sites-enabled/default" ]; then
-        sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
-fi
 
 sudo service nginx restart
