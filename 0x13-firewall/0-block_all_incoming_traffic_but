@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+
 #Install ufw on your web-01 server
 #Allow ssh
 #Deny all incoming by default
@@ -8,10 +8,9 @@
 #Enable ufw
 #check the staus
 
-if ! ufw -v; then
-    sudo apt update
-    sudo apt install -y ufw
-fi
+sudo apt update
+sudo apt install ufw
+
 
 sudo ufw allow SSH
 sudo ufw default deny incoming  
