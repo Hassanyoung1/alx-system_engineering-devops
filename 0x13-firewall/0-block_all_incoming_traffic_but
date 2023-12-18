@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#Install ufw on your web-01 server
+#Allow ssh
+#Deny all incoming by default
+#allow all outgoing traffic by default
+#allow http
+#allow https
+#Enable ufw
+#check the staus
+
+if ! ufw -v; then
+    sudo apt update
+    sudo apt install -y ufw
+fi
+
+sudo ufw allow SSH
+sudo ufw default deny incoming  
+sudo ufw default allow outgoing
+
+sudo ufw allow 22/tcp
+sudo ufw allow 80/tcp  
+sudo ufw allow 443/tcp
+
+sudo ufw enable  # Enable UFW
+
+sudo ufw status 
