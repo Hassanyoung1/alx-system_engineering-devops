@@ -1,0 +1,19 @@
+# /etc/mysql/mysql.conf.d/mysqld.cnf
+
+[mysqld]
+#bind-address = 127.0.0.1
+log_error = /var/log/mysql/error.log
+
+# Replication settings
+server-id = 1
+log_bin = /var/log/mysql/mysql-bin.log
+binlog_do_db = tyrell_corp
+
+# Set the following if not already present
+# Make sure to replace 'your_primary_password' with a strong password
+# server_id, log_bin, and binlog_do_db are crucial for replication
+
+# innodb settings (adjust according to your needs)
+
+#innodb_flush_log_at_trx_commit = 1
+sync_binlog = 1
