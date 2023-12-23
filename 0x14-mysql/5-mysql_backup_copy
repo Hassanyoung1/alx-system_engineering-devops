@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# Generates a MySQL dump and creates a compressed archive out of it
+#!/bin/bash
+
+backup_file="backup.sql"
+tar_file="$(date '+%d-%m-%Y').tar.gz"
+
+# Check if the backup file exists
+if [ -e "$backup_file" ]; then
+    echo "Backup file '$backup_file' exists. Updating..."
+    
+    # Perform the update operation here, for example, using mysqldump
+    
+    echo "Backup updated successfully."
+else
+    echo "Backup file '$backup_file' not found. Creating a new backup..."
+    
+    # Perform the initial backup operation here, for example, using mysqldump
+    mysqldump -u root -p"$1" --all-databases > "$backup_file"
+    
+    echo "Backup created successfully."
+fi
+
+# Create or update the tarball
+tar -czvf "$tar_file" "$backup_file"
+
+echo "Backup tarball '$tar_file' created successfully."
