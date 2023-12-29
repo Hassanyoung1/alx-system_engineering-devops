@@ -1,6 +1,6 @@
 ### System Engineering DevOps
 
-- [Shell, basics](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/main/0x00-shell_basics)
+- [Shell, basics](https://github.com/Hassanyoung1/alx-system_engineering-devops/0x00-shell_basics)
 - [Shell, permissions](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/main/0x01-shell_permissions)
 - [Shell, I/O Redirections and filters](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/main/0x02-shell_redirections)
 - [Shell, init files, variables and expansions](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/main/0x03-shell_variables_expansions)
