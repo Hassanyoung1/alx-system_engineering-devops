@@ -1,4 +1,4 @@
-### System Engineering DevOps
+f### System Engineering DevOps
 
 - [shell, basic](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/master/0x00-shell_basics)
 - [Shell, permissions](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/master/0x01-shell_permissions)
@@ -13,7 +13,7 @@
 - [Web infrastructure design](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/master/0x09-web_infrastructure_design)
 - [Configuration management](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/master/0x0A-configuration_management)
 - [SSH](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/master/0x0B-ssh)
-- [Web server](https://github.com/Hassanyoung1/alx-system_engineering-devops/master/main/0x0C-web_server)
+- [Web server](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/master/0x0C-web_server)
 - [Web stack debugging #0](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/master/0x0D-web_stack_debugging_0)
 - [0x0F. Load balancer](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/master/0x0F-load_balancer)
 
