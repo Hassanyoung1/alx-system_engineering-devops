@@ -1,4 +1,4 @@
-f### System Engineering DevOps
+### System Engineering DevOps
 
 - [shell, basic](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/master/0x00-shell_basics)
 - [Shell, permissions](https://github.com/Hassanyoung1/alx-system_engineering-devops/tree/master/0x01-shell_permissions)
