@@ -9,6 +9,9 @@ if __name__ == '__main__':
     import requests
     import sys
 
+    """
+    Usage: python3 gather_data_from_an_API.py <user_id>
+    """
 
     if len(sys.argv) != 2:
         print(f'Usage: {sys.argv[0]} <user_id>', file=sys.stderr)
@@ -27,6 +30,7 @@ if __name__ == '__main__':
     """
     Loop through the tasks and count the completed tasks
     """
+
     for task in todos:
         if task.get('completed'):
             completed_tasks.append(task)
@@ -38,5 +42,6 @@ if __name__ == '__main__':
     print(
         f'Employee {employee_name} is done with tasks({completed_count} / {
             len(todos)}): ')
+
     for task in completed_tasks:
         print(f'\t {task.get("title")}')
