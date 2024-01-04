@@ -30,8 +30,10 @@ if __name__ == '__main__':
     csv_file_name = f'{user_id}.csv'
     with open(csv_file_name, 'w', newline='') as csv_file:
         writer = csv.writer(csv_file)
-        writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
+        writer.writerow(
+            ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
         for task in tasks_done:
-            writer.writerow([user_id, name, task.get("completed"), task.get("title")])
+            writer.writerow([user_id, name, task.get(
+                "completed"), task.get("title")])
 
     print(f'Data exported to {csv_file_name} successfully.')
