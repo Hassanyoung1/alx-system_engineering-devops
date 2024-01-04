@@ -39,6 +39,6 @@ if __name__ == '__main__':
     """
     Print the progress of the employee's tasks
     """
-    print(f"Employee {employee_name} is done with tasks({done}/{total}):")
+    print(f'Employee {employee_name} is done with tasks({done}/{len(tasks)}):')
     for task in tasks:
-        print("\t{}".format(task))
+        print(f'\t {task.get("title")}')
