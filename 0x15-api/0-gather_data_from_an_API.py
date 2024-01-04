@@ -1,49 +1,29 @@
 #!/usr/bin/python3
-
-"""
-A Python script that, for a given employee ID,
-returns information about his/her TODO list progress.
+"""A Python script that, for a given employee ID,
+returns infomation about his/her TODO list progress.
 """
 
 if __name__ == '__main__':
-    """ import modules """
-
     import requests
     import sys
-
-    """
-    Usage: python3 gather_data_from_an_API.py <user_id>
-    """
 
     if len(sys.argv) != 2:
         print(f'Usage: {sys.argv[0]} <user_id>', file=sys.stderr)
         exit(1)
 
-    employee_id = sys.argv[1]
-    user_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
-    employee_name = requests.get(user_url).json().get('name')
+    user_id = sys.argv[1]
+    url = f'https://jsonplaceholder.typicode.com/users/{user_id}'
+    name = requests.get(url).json().get('name')
 
-    todos_url = f'https: // jsonplaceholder.typicode.com / users / {
-        employee_id} / todos'
-    todos = requests.get(todos_url).json()
-    completed_count = 0
-    completed_tasks = []
-
-    """
-    Loop through the tasks and count the completed tasks
-    """
-
-    for task in todos:
+    url = f'https://jsonplaceholder.typicode.com/users/{user_id}/todos'
+    tasks = requests.get(url).json()
+    done = 0
+    tasks_done = []
+    for task in tasks:
         if task.get('completed'):
-            completed_tasks.append(task)
-            completed_count += 1
+            tasks_done.append(task)
+            done += 1
 
-    """
-    Print the progress of the employee's tasks
-    """
-    print(
-        f'Employee {employee_name} is done with tasks({completed_count} / {
-            len(todos)}): ')
-
-    for task in completed_tasks:
+    print(f'Employee {name} is done with tasks({done}/{len(tasks)}):')
+    for task in tasks_done:
         print(f'\t {task.get("title")}')
