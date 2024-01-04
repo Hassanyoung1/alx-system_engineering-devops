@@ -9,10 +9,6 @@ if __name__ == '__main__':
     import requests
     import sys
 
-    """
-    Usage: python3 gather_data_from_an_API.py <user_id>
-    """
-
 
     if len(sys.argv) != 2:
         print(f'Usage: {sys.argv[0]} <user_id>', file=sys.stderr)
