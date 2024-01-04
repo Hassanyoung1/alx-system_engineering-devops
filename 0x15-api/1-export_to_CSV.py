@@ -6,6 +6,7 @@ returns information about his/her TODO list progress.
 if __name__ == '__main__':
     import requests
     import sys
+    import csv
 
     if len(sys.argv) != 2:
         print(f'Usage: {sys.argv[0]} <user_id>', file=sys.stderr)
@@ -24,7 +25,13 @@ if __name__ == '__main__':
             tasks_done.append(task)
             done += 1
 
-    with open(f"{user_id}.csv", 'w') as csv_file:
+    print(f'Employee {name} is done with tasks({done}/{len(tasks)}):')
+
+    csv_file_name = f'{user_id}.csv'
+    with open(csv_file_name, 'w', newline='') as csv_file:
+        writer = csv.writer(csv_file)
+        writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
         for task in tasks_done:
-            csv_file.write(f'"{user_id}","{name}","{task.get("completed")}",'
-                           f'"{task.get("title")}"\n')
+            writer.writerow([user_id, name, task.get("completed"), task.get("title")])
+
+    print(f'Data exported to {csv_file_name} successfully.')
