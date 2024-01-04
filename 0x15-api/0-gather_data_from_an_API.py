@@ -23,21 +23,19 @@ if __name__ == '__main__':
     todosUrl = f"https://jsonplaceholder.typicode.com/users/{user_id}/todos"
     todos = requests.get(todosUrl).json()
     done = 0
-    total = 0
     tasks = []
 
     """
     Loop through the todos and count the completed tasks
     """
     for todo in todos:
-        total += 1
         if todo.get('completed'):
-            done += 1
             tasks.append(todo.get('title'))
+            done += 1
 
     """
     Print the progress of the employee's tasks
     """
-    print(f"Employee {employee_name} is done with tasks({done}/{total}):")
+    print(f"Employee {employee_name} is done with tasks({done}/{len(tasks)}):")
     for task in tasks:
         print("\t{}".format(task))
