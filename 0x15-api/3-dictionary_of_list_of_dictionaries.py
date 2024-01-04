@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Return info about employee's TODO list progress"""
 
 import json
