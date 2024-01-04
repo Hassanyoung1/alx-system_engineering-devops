@@ -6,6 +6,8 @@ returns information about his/her TODO list progress.
 """
 
 if __name__ == '__main__':
+    """ import modules """
+
     import requests
     import sys
 
