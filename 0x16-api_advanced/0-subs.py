@@ -4,11 +4,13 @@ Module Documentation
 
 Importing in Alphabetical Order
 
-This module provides a function to query the Reddit API and retrieve the number of subscribers for a given subreddit.
+This module provides a function to query the Reddit API and retrieve the number
+of subscribers for a given subreddit.
 
 Usage:
     - Import the module.
-    - Call the function `number_of_subscribers(subreddit)` with the name of the subreddit as the argument.
+    - Call the function `number_of_subscribers(subreddit)` with the name of the
+    subreddit as the argument.
 
 Example:
     >>> import my_module
@@ -29,14 +31,16 @@ def number_of_subscribers(subreddit):
         subreddit (str): The name of the subreddit to query.
 
     Returns:
-        int: The number of subscribers for the subreddit. If the subreddit is invalid or an error occurs during
+        int: The number of subscribers for the subreddit. If the subreddit is
+        invalid or an error occurs during
              the request, returns 0.
 
     Raises:
         None
 
     Note:
-        This function uses the Requests module for sending HTTP requests to the Reddit API.
+        This function uses the Requests module for sending HTTP requests to
+        the Reddit API.
 
     """
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
